@@ -1,0 +1,168 @@
+// Mixins
+@mixin transition {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+// Fonts Mixins
+@mixin h1 {
+    font: {
+        font-family: "Gotham", Arial, Helvetica, sans-serif;
+        weight: bold;
+        letter-spacing: 1px;
+        style: normal;
+    }
+    @media (max-width: 992px) {
+        font-size: 2rem;
+    }
+    @media (min-width: 992px) {
+        font-size: 2.26rem;
+    }
+}
+
+@mixin h2 {
+    font: {
+        font-family: "Gotham", Arial, Helvetica, sans-serif;
+        weight: 500;
+        letter-spacing: 0.5px;
+        style: normal;
+    }
+    @media (max-width: 992px) {
+        font-size: 1.2rem;
+    }
+    @media (min-width: 992px) {
+        font-size: $title-font-size-lg;
+    }
+}
+
+@mixin h3 {
+    font: {
+        font-family: "Gotham", Arial, Helvetica, sans-serif;
+        weight: 500;
+        letter-spacing: 0.7px;
+        style: normal;
+    }
+    @media (max-width: 992px) {
+        font-size: $common-font-size-sm;
+    }
+    @media (min-width: 992px) {
+        font-size: $common-font-size-lg;
+    }
+}
+@mixin commonText {
+    font: {
+        font-family: "Gotham", Arial, Helvetica, sans-serif;
+        weight: normal;
+        letter-spacing: 0.5px;
+    }
+    @media (max-width: 992px) {
+        font-size: $common-font-size-sm;
+    }
+    @media (min-width: 992px) {
+        font-size: $common-font-size-lg;
+    }
+}
+
+// Gutters Correction
+
+@mixin guttersCorrection {
+    width: calc(100% + 30px);
+    margin: 0 -15px;
+}
+
+
+// Correction 15px margin
+@mixin correction-15px {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+}
+
+// Padding - Margin 0
+@mixin mp0 {
+    margin: 0;
+    padding: 0;
+}
+
+// Box Shadow
+@mixin box-shadow {
+    -webkit-box-shadow: 0px 1px 1px 0px rgba($dark, 0.1);
+    -moz-box-shadow: 0px 1px 1px 0px rgba($dark, 0.1);
+    box-shadow: 0px 1px 1px 0px rgba($dark, 0.1);
+}
+
+@mixin a {
+    a {
+        color: white;
+        box-shadow: inset 0 -8px 0 rgba($color: $ecru, $alpha: 0.15);
+        &:hover {
+            text-decoration: none;
+            @include transition;
+            box-shadow: inset 0 -28px 0 rgba($color: $turquoise, $alpha: 1);
+        }
+    }
+}
+
+// li
+@mixin white-li {
+    li {
+        margin-bottom: $m-medium * 0.25;
+        a {
+            color: white;
+            span {
+                box-shadow: inset 0 -8px 0 rgba($color: $ecru, $alpha: 0.15);
+                &:hover {
+                    @include transition;
+                    box-shadow: inset 0 -28px 0 rgba($color: $turquoise, $alpha: 1);
+                }
+            }
+            &:hover {
+                text-decoration: none;
+                @media (min-width: 992px) {
+                    &::before {
+                        left: -14px;
+                        opacity: 1;
+                    }
+                }
+            }
+            &::before {
+                @media (min-width: 992px) {
+                    position: relative;
+                    left: -40px;
+                    content: "\f054";
+                    font-family: "FontAwesome";
+                    color: $yellow;
+                    @include transition;
+                    transition-delay: 0.15s;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin introSection {
+    padding-top: $m-large * 1.25;
+    @include guttersCorrection;
+    h2 {
+        @include h2;
+    }
+    hr {
+        margin-left: 0;
+    }
+    p,
+    li {
+        font: {
+            size: $common-font-size-lg;
+        }
+        line-height: $line-height;
+    }
+    h3 {
+        @include h2;
+        margin-top: $m-medium;
+        margin-bottom: $m-medium;
+    }
+}

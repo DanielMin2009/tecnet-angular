@@ -1,0 +1,480 @@
+@import "../../../../styles.scss";
+
+header {
+    @media (min-width: 992px) {
+        position: fixed;
+    }
+    z-index: 4;
+    background-color: rgba(white, 98%);
+    @include box-shadow;
+}
+.menu-area {
+    position: static;
+}
+.mega-area {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    @media (min-width: 992px) {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+.nav-link {
+    padding: 0;
+}
+.active {
+    color: $turquoise !important;
+}
+.myDropDownMenu {
+    width: calc(100% + 30px);
+    margin: 0 -30px;
+    @media (max-width: 992px) {
+        padding: $m-medium / 2 15px $m-medium / 2 15px;
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        padding: 0 5% $m-medium * 1.5 5%;
+    }
+    @media (min-width: 1200px) and (max-width: 1500px) {
+        padding: 0 10% $m-medium * 1.75 10%;
+    }
+    @media (min-width: 1500px) {
+        padding: 0 10% $m-medium * 2.25 10%;
+    }
+    div {
+        @media (max-width: 992px) {
+            padding-left: 0;
+            padding-right: 10%;
+        }
+        @media (min-width: 992px) and (max-width: 1200px) {
+            padding-right: 5%;
+            padding-left: 30px;
+        }
+        @media (min-width: 1200px) {
+            padding-right: 5%;
+            padding-left: 45px;
+        }
+        @media (min-width: 1500px) {
+            padding-right: 7%;
+        }
+    }
+
+    div:nth-child(4),
+    div:nth-child(5),
+    div:nth-child(6) {
+        @media (min-width: 992px) {
+            margin-top: 44px;
+        }
+    }
+}
+
+.navbar {
+    @media (max-width: 992px) {
+        padding: 0 0 22px 0;
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        padding: 0 calc(5% - 15px) 22px calc(5% - 15px);
+    }
+    @media (min-width: 1200px) and (max-width: 1500px) {
+        padding: 0 10% 22px 10%;
+    }
+    @media (min-width: 1500px) {
+        padding: 0 10% 22px 10%;
+    }
+    #navbar {
+        @media (max-width: 992px) {
+            margin-top: 22px;
+            margin-bottom: 44px;
+        }
+        ul {
+            @media (max-width: 992px) {
+                line-height: $line-height * 2;
+                margin-left: 15px;
+            }
+            .nav-item {
+                @media (max-width: 992px) {
+                    padding: $m-medium 0 0 0;
+                    a {
+                        color: $dark;
+                        font : {
+                            size: 1.1rem !important;
+                            weight: 500;
+                        }
+                        @include transition;
+                        &:hover {
+                            color: rgba($turquoise, 100%);
+                        }
+                    }
+                }
+                @media (min-width: 992px) {
+                    padding: 60px 9px 0 9px;
+                }
+                .nav-link {
+                    @include commonText;
+                    @include transition;
+                    font : {
+                        weight: 500 !important;
+                    }
+                    color: $dark;
+                    padding: 0 auto;
+                    &:hover {
+                        color: $turquoise;
+                    }
+                    @media (max-width: 992px) {
+                        font : {
+                            size: $title-font-size-sm !important;
+                        }
+                    }
+                    @media (min-width: 992px) {
+                        display: block;
+                        position: relative;
+                        z-index: 2;
+                        text-decoration: none;
+                        box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        &.active {
+                            color: $turquoise !important;
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                height: 4px;
+                                left: 4px;
+                                top: calc(100% + 18px);
+                                width: calc(100% - 8px);
+                                border-radius: 0 0 1px 1px;
+                                @include transition;
+                                transition-delay: 0.05s;
+                                z-index: -1;
+                                background: rgba($turquoise, 100%);
+                            }
+                        }
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            height: 0;
+                            left: 4px;
+                            top: calc(100% + 28px);
+                            width: calc(100% - 8px);
+                            border-radius: 0 0 1px 1px;
+                            @include transition;
+                            transition-delay: 0.05s;
+                            z-index: -1;
+                            background: rgba($turquoise, 100%);
+                        }
+                        &:hover {
+                            color: $turquoise;
+                            &::before {
+                                top: calc(100% + 18px);
+                                height: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.logo {
+    margin: 24.9px 0 0 0;
+    @media (max-width: 992px) {
+        width: 170px;
+    }
+    @media (min-width: 992px) {
+        width: 200px;
+    }
+}
+.dropdown-menu {
+    min-width: 10rem;
+    color: $dark;
+    background-color: $ecru;
+    background-clip: padding-box;
+    border-radius: 0;
+    @include guttersCorrection;
+    @media (max-width: 992px) {
+        padding: 0 15px 0 15px;
+        background-color: rgba($ecru, 60%);
+    }
+    @media (min-width: 992px) {
+        padding: $m-large * 0.25 0;
+        margin-top: -1px;
+    }
+    &__responsive {
+        li {
+            a {
+                text-decoration: none;
+                @include transition;
+                @media (max-width: 992px) {
+                    line-height: $line-height * 3;
+                }
+            }
+        }
+    }
+
+    div {
+        div {
+            width: 100%;
+            margin: $m-medium / 1.5 0;
+            h2 {
+                @include h2;
+                color: $turquoise;
+                font-size: 1.1rem !important;
+                .light {
+                    color: $dark;
+                }
+            }
+            h3 {
+                color: $dark;
+                @include h3;
+                line-height: $line-height;
+                width: 100%;
+            }
+            .myDropDownMenu__callToAction {
+                // display: grid;
+                // grid-template-columns: 70% 30%;
+                // grid-template-rows: 2fr;
+                // grid-column-gap: 3%;
+                // grid-row-gap: 3%;
+                // justify-items: stretch;
+                // align-items: stretch;
+                border-bottom: 1px solid darken($ecru, 4%);
+                padding-bottom: 0.88rem;
+                padding-left: 0;
+                ul {
+                    line-height: 120%;
+                    li {
+                        @include commonText;
+                        color: $dark;
+                        list-style: none;
+                        padding: 0;
+                        margin-right: 6px;
+                    }
+                }
+                &__link {
+                    @include commonText;
+                    @include transition;
+                    color: rgba($turquoise, 100%);
+                    width: 100%;
+                    text-align: right;
+                    align-self: flex-end;
+                    &:before {
+                        position: absolute;
+                        opacity: 0;
+                        left: 56%;
+                        content: "\f054";
+                        font-family: "FontAwesome";
+                        transition: all ease-in 0.15s;
+                        cursor: pointer;
+                        border-top: none;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        &:before {
+                            left: 60%;
+                            opacity: 1;
+                        }
+                    }
+                    font : {
+                        size: 0.73rem !important;
+                    }
+                }
+            }
+            p {
+                @include commonText;
+            }
+        }
+        figure {
+            position: relative;
+            margin-bottom: $m-medium / 2;
+            overflow: hidden;
+            z-index: 9;
+            @include transition;
+            &:hover {
+                cursor: pointer;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                background: $turquoise;
+                border: 2px solid $turquoise;
+                z-index: -1;
+                @include transition;
+                opacity: 0;
+            }
+            img {
+                border-radius: $border-radius;
+            }
+        }
+    }
+}
+.p-175rem {
+    @media (min-width: 992px) {
+        padding-left: $m-medium + 10 !important;
+    }
+}
+.dropdown-toggle::after {
+    position: absolute;
+    content: "\f078";
+    font-family: "FontAwesome";
+    transition: all ease-in 0.15s;
+    cursor: pointer;
+    border-top: none;
+}
+/* Transition */
+// .dropdown-toggle:hover::after,
+.dropdown-toggle-opened::after {
+    color: $turquoise;
+    transform: rotateX(-180deg);
+    cursor: pointer;
+}
+.dropdown-toggle-closed::after {
+    color: $dark;
+    transform: rotateX(0deg);
+    cursor: pointer;
+}
+
+// Hover Effects
+.img-hover-effect {
+    figure {
+        overflow: hidden;
+        background-color: $turquoise;
+        opacity: 1;
+        @include transition;
+        img {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            @include transition;
+        }
+        &:hover {
+            img {
+                opacity: 0.5;
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15);
+            }
+        }
+        // Arrow
+        &::before {
+            right: 100%;
+            top: 32%;
+        }
+
+        &::after {
+            width: 1%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+        &:hover::before {
+            left: 10%;
+        }
+        &::before {
+            position: absolute;
+            content: "\f054";
+            font-family: "FontAwesome";
+            font-size: 1.7rem;
+            z-index: 2;
+            opacity: 0;
+        }
+        &:hover {
+            transition-delay: 0.25s, 0.25s;
+            color: white;
+            text-align: left;
+            &::before {
+                opacity: 1;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+hr {
+    @media (max-width: 992px) {
+        margin: 8px 0 8px 0;
+    }
+    @media (min-width: 992px) {
+        margin: 10px 0 10px 0;
+    }
+}
+
+// Hamburger Icon
+#nav-toggle {
+    display: none;
+}
+
+.hamburger-icon {
+    position: relative;
+    cursor: pointer;
+    width: 26px;
+    height: 14px;
+
+    @media (max-width: 768px) {
+        top: 22px;
+        right: 10%;
+    }
+    @media (min-width: 768px) {
+        top: 22px;
+        right: 10%;
+    }
+}
+
+.hamburger-icon span,
+.hamburger-icon:before,
+.hamburger-icon:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    top: 50%;
+    overflow: hidden;
+    background-color: $dark;
+    border-radius: 1px;
+
+    &:hover {
+        background-color: $turquoise;
+    }
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    transform-origin: center top;
+    transition: transform 0.15s, top 0.15s 0.15s;
+}
+
+.hamburger-icon:after {
+    top: 100%;
+    transform-origin: center bottom;
+}
+
+#nav-toggle:checked + .hamburger-icon span {
+    opacity: 0;
+}
+
+#nav-toggle:checked + .hamburger-icon:after {
+    top: 50%;
+    transform: rotate(-45deg);
+    transition: top 0.15s, transform 0.15s 0.15s;
+}
+
+#nav-toggle:checked + .hamburger-icon:before {
+    top: 50%;
+    transform: rotate(45deg);
+    transition: top 0.15s, transform 0.15s 0.15s;
+}

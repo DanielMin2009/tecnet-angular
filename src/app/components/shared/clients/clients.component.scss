@@ -1,0 +1,50 @@
+@import "../../../../styles.scss";
+
+.clients {
+    padding-bottom: $m-large;
+    padding-top: $m-large;
+    &__container {
+        h2 {
+            @include h2;
+        }
+        hr {
+            @media (max-width: 992px) {
+                margin: 16px 0 16px 0;
+            }
+            @media (min-width: 992px) {
+                margin: 20px 0 20px 0;
+            }
+        }
+        &__logos-grid {
+            display: grid;
+            grid-template-rows: auto;
+            grid-column-gap: 5%;
+            grid-row-gap: 1.64rem;
+            justify-items: stretch;
+            align-items: stretch;
+            padding-top: $m-large / 2;
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            @media (min-width: 768px) and (max-width: 992px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            }
+            @media (min-width: 992px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            }
+            img {
+                margin: auto;
+                height: auto;
+                @media (max-width: 992px) {
+                    width: 90%;
+                }
+                @media (min-width: 992px) and (max-width: 1450px) {
+                    width: 85%;
+                }
+                @media (min-width: 1450px) {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

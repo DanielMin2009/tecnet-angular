@@ -1,0 +1,155 @@
+<!-- Navbar -->
+<header class="container-fluid myHeaderTop no-gutters">
+
+    <div class="row">
+        <div class="col-12">
+            <nav (click)="removeClass()" class="navbar navbar-expand-lg">
+                <a #menu routerLinkActive="menu-active" routerLink="/" class="navbar-brand">
+                    <figure class="logo">
+                        <img src="./assets/img/logos/logo-tecnet.svg" alt="tecnet" width="100%" height="auto" />
+                    </figure>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <input type="checkbox" id="nav-toggle" />
+                    <label for="nav-toggle" class="hamburger-icon my-auto">
+                        <span class="navbar-toggler-icon"></span>
+                    </label>
+                </button>
+                <div #dropDwonResponsive class="collapse navbar-collapse shift" id="navbar">
+                    <!-- <ul class="navbar-nav ml-auto" aria-expanded="false" role="button" data-target="#navbar"> -->
+                    <ul class="navbar-nav ml-auto" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <li class="nav-item active one-item">
+                            <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown menu-area d-block d-lg-none">
+
+                            <a #dropDwonElement (click)="status=!status"
+                                [ngClass]="status ? 'dropdown-toggle-opened' : 'dropdown-toggle-closed'"
+                                routerLinkActive="active" class="nav-link dropdown-toggle" id="mega-two" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Fabricación
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="mega-two">
+                                <div class="row myDropDownMenu">
+                                    <ul class="dropdown-menu__responsive">
+                                        <li><a routerLink="/fabricacion/maquinaria-de-limpieza" title="fabricacion de maquinaria de limpieza de piezas">Maquinaria de limpieza de piezas</a></li>
+                                        <li><a routerLink="/fabricacion/maquinaria-de-destilacion" title="fabricacion de maquinaria de destilacion">Maquinaria de destilación</a></li>
+                                        <li><a
+                                                routerLink="/fabricacion/maquinaria-de-descontaminacion-de-aire" title="fabricacion de maquinaria de descontaminacion de aire">Maquinaria de descontaminación de aire</a></li>
+                                        <li><a routerLink="/fabricacion-de-maquinaria">Ver todo</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown menu-area d-none d-lg-block">
+
+                            <a (click)="status=!status"
+                                [ngClass]="status ? 'dropdown-toggle-opened' : 'dropdown-toggle-closed'"
+                                #dropDwonElement routerLinkActive="active" class="nav-link dropdown-toggle"
+                                id="mega-two" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Fabricación
+                            </a>
+
+                            <div class="dropdown-menu mega-area animated fadeIn fast" aria-labelledby="mega-two">
+                                <div class="row myDropDownMenu">
+                                    <div routerLink="/fabricacion/maquinaria-de-limpieza"
+                                    title="fabricacion de maquinaria de limpieza y desengrase de piezas"
+                                        class="col-sm-6 img-hover-effect">
+                                        <h2><span class="light">Maquinaria</span><br> de limpieza de piezas</h2>
+                                        <figure>
+                                            <img src="./assets/img/aplicaciones-limpieza/servicio/limpieza-piezas-sonoclean-disolventes-aiii.jpg"
+                                                width="100%" height="auto" />
+                                        </figure>
+                                        <!-- <span class="common">Tipos de residuo</span> -->
+                                        <!-- <h3><span class="green">70%</span> orgánicos <span class="light">/ </span><span class="green">30%</span> inorgánicos</h3> -->
+                                        <hr>
+                                        <div class="myDropDownMenu__callToAction">
+                                            <!-- <ul>
+                                                <li>Aceites</li>
+                                                <li>Lubricantes</li>
+                                                <li>Siliconas</li>
+                                                <li>Ceras</li>
+                                            </ul> -->
+                                            <a class="myDropDownMenu__callToAction__link" routerLink="/fabricacion/maquinaria-de-limpieza" title="fabricacion de maquinaria de limpieza y desengrase de piezas">ver
+                                                sección</a>
+                                        </div>
+                                    </div>
+                                    <div routerLink="/fabricacion/maquinaria-de-destilacion"
+                                    title="fabricacion de maquinaria de destilacion"
+                                        class="col-sm-6 img-hover-effect">
+                                        <h2><span class="light">Maquinaria</span><br> de destilación</h2>
+                                        <figure>
+                                            <img src="./assets/img/aplicaciones-limpieza/servicio/limpieza-piezas-sonoclean-ultrasonidos-base-acuosa.jpg"
+                                                width="100%" height="auto" />
+                                        </figure>
+                                        <!-- <span class="common">Tipos de residuo</span> -->
+                                        <!-- <h3><span class="green">70%</span> inorgánicos <span class="light">/ </span><span class="green">30%</span> orgánicos</h3> -->
+                                        <hr>
+
+                                        <div class="myDropDownMenu__callToAction">
+                                            <!-- <ul>
+                                                <li>De disolventes</li>
+                                                <li>De aguas residuales</li>
+                                            </ul> -->
+                                            <a class="myDropDownMenu__callToAction__link" routerLink="/fabricacion/maquinaria-de-destilacion" title="fabricacion de maquinaria de destilacion">ver
+                                                sección</a>
+                                        </div>
+
+                                    </div>
+                                    <div routerLink="/fabricacion/maquinaria-de-descontaminacion-de-aire"
+                                    title="descontaminacion de aire" 
+                                        class="col-sm-6 img-hover-effect">
+                                        <h2><span class="light">Maquinaria</span><br> de descontaminación de aire</h2>
+                                        <figure>
+                                            <img src="./assets/img/aplicaciones-limpieza/servicio/limpieza-piezas-sonoclean-proceso-combinado-disolventes-aiii-base-acuosa.jpg"
+                                                width="100%" height="auto" />
+                                        </figure>
+                                        <!-- <span class="common">Tipos de residuo</span> -->
+                                        <!-- <h3><span lang="en"><span class="green">'Spot Free'</span>. Orgánicos e inorgánicos</span></h3> -->
+                                        <hr>
+
+                                        <div class="myDropDownMenu__callToAction">
+                                            <!-- <ul>
+                                                <li>Sales</li>
+                                                <li>Taladrinas</li>
+                                                <li>Aceites</li>
+                                                <li>Petróleos</li>
+                                            </ul> -->
+                                            <a class="myDropDownMenu__callToAction__link" routerLink="/servicios-de-limpieza/hibrida-disolvententes-aiii-detergentes" title="servicio de limpieza de piezas con base disolventes aiii y acuosa en camara" >ver
+                                                sección</a>
+                                        </div>
+
+                                        
+                                    </div>
+                                    
+                                    
+                                    <div class="col-sm-6 img-hover-effect">
+                                        <!-- <h2><span class="light">¿Cómo seleccionar</span><br> su proceso de limpieza?</h2>
+                                        <p>Si conoce el material, el tipo de suciedades que acumulan sus piezas, o tiene algún requisito específico puede seleccionar su opción deseada, si necesita más información, haga clic en el botón de ver todo. Nuestro equipo técnico le asesorará.</p> -->
+                                        <button class="button slide-left" routerLink="/fabricacion-de-maquinaria">ver
+                                            todo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item one-item p-175rem">
+                            <a class="nav-link" routerLinkActive="active" routerLink="/desarrollo-industrial" title="desarrollo industrial de prototipos">Desarrollo de prototipos</a>
+                        </li>
+                        <li class="nav-item one-item">
+                            <a class="nav-link" routerLinkActive="active"
+                                routerLink="/servicio-tecnico-industrial" title="servicio tecnico calificado">Servicio técnico</a>
+                        </li>
+                        <li class="nav-item one-item">
+                            <a class="nav-link" routerLinkActive="active" routerLink="/contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,70 @@
+<form class="contact-form" autocomplete="off" [formGroup]="myForm" (ngSubmit)=sendForm()>
+    <h4>Rellene los datos de contacto</h4>
+    <hr />
+    <div class="form-group">
+        <label>Nombre y apellidos</label>
+        <input class="form-control" type="text" name="txtName" formControlName="txtName"/>
+        <small *ngIf="myForm.controls.txtName.invalid && myForm.controls.txtName.touched">Campo requerido</small>
+    </div>
+
+    <div class="form-group">
+        <label>Empresa</label>
+        <input class="form-control" type="text" name="txtCompany" formControlName="txtCompany">
+    </div>
+
+    <div class="form-group">
+        <label>Sector</label>
+        <input class="form-control" type="text" name="txtSector" formControlName="txtSector">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="email" name="txtEmail" formControlName="txtEmail">
+        <small *ngIf="myForm.controls.txtEmail.hasError('required') && myForm.controls.txtEmail.touched">Campo requerido</small>
+        <small *ngIf="myForm.controls.txtEmail.hasError('pattern')">Email inválido</small>
+
+    </div>
+
+    <div class="form-group">
+        <label>Teléfono</label>
+        <input class="form-control" type="tel" name="txtPhone" formControlName="txtPhone">
+    </div>
+
+    <h4 class="mt-large">Rellene los datos técnicos</h4>
+    <hr />
+
+    <div class="form-group">
+        <label>Material/es de las piezas</label>
+        <input class="form-control" type="text" name="txtMaterial" formControlName="txtMaterial">
+    </div>
+
+    <div class="form-group">
+        <label>Tamaño de las piezas</label>
+        <input class="form-control" type="number" name="txtSize" formControlName="txtSize">
+    </div>
+
+    <div class="form-group">
+        <label>Nº de piezas a limpiar por día / semana</label>
+        <input class="form-control" type="number" name="txtQuantity" min="1" formControlName="txtQuantity">
+        <small *ngIf="myForm.controls.txtQuantity.invalid && myForm.controls.txtQuantity.touched">Introduzca una cantidad mínima</small>
+    </div>
+
+    <div class="form-group">
+        <label>Tipo de suciedad en las piezas</label>
+        <input class="form-control" type="text" name="txtDirt" formControlName="txtDirt">
+    </div>
+
+    <div class="form-group">
+        <label>Comentarios</label>
+        <textarea class="form-control" rows="4" name="txtComments" formControlName="txtComments"></textarea>
+        <small *ngIf="myForm.controls.txtComments.invalid && myForm.controls.txtComments.touched">Campo requerido</small>
+    </div>
+
+
+    <div class="form-group mt-medium">
+        <button class="button slide-left" type="submit" name="send" value="Enviar">Enviar</button>
+    </div>
+
+</form>
+
+

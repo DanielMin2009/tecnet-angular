@@ -1,0 +1,43 @@
+@import "../../../../styles.scss";
+
+.call-to-action {
+    padding-top: $m-large;
+    padding-bottom: $m-large;
+    background-color: $yellow;
+    background-image: url(../../../../assets/img/headers/backGroundDegreasers.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include guttersCorrection;
+    h4 {
+        color: white;
+        margin-bottom: 0;
+        font: {
+            size: 2.1rem;
+        }
+        // &::after {
+        //     @media (min-width: 992px) {
+        //         position: relative;
+        //         left: 80%;
+        //         content: "\f054";
+        //         font-family: "FontAwesome";
+        //         @include transition;
+        //         transition-delay: 0.15s;
+        //         opacity: 1;
+        //     }
+        // }
+    }
+    .button-white {
+        margin-top: 0;
+        margin-right: 0;
+        padding: 22px 70px;
+        max-width: 280px;
+        font: {
+            size: $title-font-size-lg;
+        }
+    }
+    .slide-left {
+        &::before {
+            top: 40%;
+        }
+    }
+}

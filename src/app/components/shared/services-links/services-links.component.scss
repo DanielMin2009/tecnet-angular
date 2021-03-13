@@ -1,0 +1,195 @@
+@import "../../../../styles.scss";
+
+// Presentation Container
+.section {
+    padding-top: $m-large;
+    padding-bottom: $m-large * 1.25;
+    // background-color: rgba($color: $ecru, $alpha: 0.4);
+    @include guttersCorrection;
+    &__servicios-home-row {
+        @media (max-width: 786px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        &__article {
+            
+            display: grid;
+            grid-column-gap: $m-large / 2;
+            grid-row-gap: $m-large / 2;
+            @media (max-width: 786px) {
+                grid-template-columns: 1fr;
+                @include guttersCorrection;
+            }
+
+            @media (min-width: 786px) and (max-width: 1600px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (min-width: 1600px) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            &__item {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+                background: $yellow;
+                text-align: center;
+                cursor: pointer;
+                img {
+                    border-radius: 2px;
+                    position: relative;
+                    display: block;
+                    // min-height: 100%;
+                    // max-width: 100%;
+                    opacity: 1;
+
+                    -webkit-transition: opacity 0.28s, -webkit-transform 0.28s;
+                    transition: opacity 0.28s, transform 0.28s;
+                    -webkit-transform: scale(1.12);
+                    transform: scale(1.12);
+                }
+                &:hover {
+                    -webkit-transition: all 0.28s, -webkit-transform 0.28s;
+                    transition: all 0.28s;
+                    img {
+                        opacity: 0.4;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
+                }
+                figcaption {
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    padding: 7%;
+                    color: white;
+                    a {
+                        z-index: 1000;
+                        text-indent: 200%;
+                        white-space: nowrap;
+                        font-size: 0;
+                        opacity: 0;
+                    }
+                    h2 {
+                        -webkit-transition: all 0.28s, -webkit-transform 0.28s;
+                        transition: all 0.28s;
+                        line-height: 116%;
+                        margin-bottom: 0;
+                        font : {
+                            weight: bold;
+                        }
+                        @media (max-width: 768px) {
+                            padding-top: 30%;
+                            font : {
+                                size: 1.8rem;
+                            }
+                        }
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            padding-top: 20%;
+                            font : {
+                                size: 1.8rem;
+                            }
+                        }
+                        @media (min-width: 992px) and (max-width: 1200px) {
+                            padding-top: 11%;
+                            font : {
+                                size: 1.8rem;
+                            }
+                        }
+                        @media (min-width: 1200px) and (max-width: 1430px) {
+                            padding-top: 16%;
+                            font : {
+                                size: $title-font-size-xl;
+                            }
+                        }
+                        @media (min-width: 1430px) {
+                            padding-top: 30%;
+                            font : {
+                                size: $title-font-size-xl;
+                            }
+                        }
+                    }
+                    hr {
+                        margin: $m-medium * 1.25 auto;
+                    }
+                    p,
+                    ul {
+                        margin: 0 auto;
+                        -webkit-transform: scale(1.5);
+                        transform: scale(1.5);
+                        line-height: 126%;
+                        font : {
+                            size: $title-font-size-sm;
+                            weight: 500;
+                        }
+                    }
+                    ul {
+                        @media (max-width: 587px) {
+                            margin-top: $m-medium / 1.5;
+                        }
+                        @media (min-width: 578px) and (max-width: 992px) {
+                            margin-top: $m-medium * 0.75;
+                        }
+                        @media (min-width: 992px) and (max-width: 1600px) {
+                            margin-top: $m-medium * 1.75;
+                        }
+                        @media (min-width: 1600px) {
+                            margin-top: $m-medium;
+                        }
+                        li {
+                            display: inline-block;
+                            margin: 0 $m-medium / 3;
+                            &::before {
+                                position: relative;
+                                left: -4px;
+                                content: "\f00c";
+                                font-family: "FontAwesome";
+                                color: $turquoise;
+                            }
+                        }
+                    }
+                    &::before {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        left: 0px;
+                        border: 22px solid $turquoise;
+                        content: "";
+                        -webkit-transform: scale(1.1);
+                        transform: scale(1.1);
+                    }
+                    &::before,
+                    p,
+                    ul {
+                        opacity: 0;
+                        -webkit-transition: opacity 0.28s, -webkit-transform 0.28s;
+                        transition: opacity 0.28s, transform 0.28s;
+                    }
+                    &:hover {
+                        &::before,
+                        p,
+                        ul {
+                            opacity: 1;
+                            -webkit-transform: scale(1);
+                            transform: scale(1);
+                        }
+                    }
+                    &::before,
+                    &::after {
+                        pointer-events: none;
+                    }
+                }
+                figcaption,
+                a {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
