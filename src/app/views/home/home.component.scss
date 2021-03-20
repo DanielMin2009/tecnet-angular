@@ -2,15 +2,12 @@
 
 .bg-intro-large {
     background: url(../../../assets/img/backgrounds/background-tecnet-waves.svg);
-    background-image: url(../../../assets/img/backgrounds/cleaning-machine-background.jpg);
+    // background-image: url(../../../assets/img/backgrounds/cleaning-machine-background.jpg);
     background-position-x: right;
+    background-position-y: top;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right;
-    backdrop-filter: grayscale(30%);
-    backdrop-filter: hue-rotate(120deg);
-    backdrop-filter: invert(70%);
-    backdrop-filter: opacity(20%);
+    background-attachment: fixed;
 }
 
 // Presentation Container
@@ -113,5 +110,3 @@
         }
     }
 }
-
-

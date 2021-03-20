@@ -185,10 +185,10 @@ header {
 .logo {
     margin: 24.9px 0 0 0;
     @media (max-width: 992px) {
-        width: 170px;
+        width: 120px;
     }
     @media (min-width: 992px) {
-        width: 200px;
+        width: 140px;
     }
 }
 .dropdown-menu {
@@ -221,7 +221,7 @@ header {
     div {
         div {
             width: 100%;
-            margin: $m-medium / 1.5 0;
+            margin: 4rem 0;
             h2 {
                 @include h2;
                 color: $turquoise;
@@ -237,13 +237,6 @@ header {
                 width: 100%;
             }
             .myDropDownMenu__callToAction {
-                // display: grid;
-                // grid-template-columns: 70% 30%;
-                // grid-template-rows: 2fr;
-                // grid-column-gap: 3%;
-                // grid-row-gap: 3%;
-                // justify-items: stretch;
-                // align-items: stretch;
                 border-bottom: 1px solid darken($ecru, 4%);
                 padding-bottom: 0.88rem;
                 padding-left: 0;
@@ -363,7 +356,7 @@ header {
         // Arrow
         &::before {
             right: 100%;
-            top: 32%;
+            top: 40%;
         }
 
         &::after {
